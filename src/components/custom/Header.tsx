@@ -6,7 +6,6 @@ import { Menu, X } from "lucide-react";
 import { Button } from "../ui/button"; 
 
 export function Header() {
-  // ... rest of your code
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
@@ -35,9 +34,12 @@ export function Header() {
                 {item.label}
               </Link>
             ))}
-            <Button className="bg-blue-600 hover:bg-blue-700">
-              Try Now
-            </Button>
+            {/* Updated Try Now Button */}
+            <Link href="/dashboard">
+              <Button className="bg-blue-600 hover:bg-blue-700">
+                Try Now
+              </Button>
+            </Link>
           </div>
           
           {/* Mobile Menu Button */}
@@ -62,9 +64,12 @@ export function Header() {
                 {item.label}
               </Link>
             ))}
-            <Button className="w-full bg-blue-600 hover:bg-blue-700">
-              Try Now
-            </Button>
+            {/* Updated Mobile Try Now Button */}
+            <Link href="/dashboard" onClick={() => setIsMenuOpen(false)}>
+              <Button className="w-full bg-blue-600 hover:bg-blue-700">
+                Try Now
+              </Button>
+            </Link>
           </div>
         )}
       </nav>
